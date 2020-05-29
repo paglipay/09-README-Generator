@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/paglipay/09-README-Generator/issues"
   },
-  "homepage": "https://github.com/paglipay/09-README-Generator#readme"
+  "homepage": "https://github.com/paglipay/09-README-Generator#readme",
+  "dependencies": {
+    "inquirer": "^7.1.0"
+  }
 }
