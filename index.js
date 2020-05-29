@@ -75,7 +75,7 @@ inquirer
 
         for (property in response) {
             console.log(`key= ${property} value = ${response[property]}`)
-            output += `${property.capitalize()}: ${response[property]}\n\n`
+            output += `# ${property.capitalize()}: ${response[property]}\n\n`
         }
 
         writeFileAsync("README.md", output).then(function () {
