@@ -5,7 +5,7 @@
 #### Heading 4
 ##### Heading 5
 ###### Heading 6
-
+[![Build Status](https://travis-ci.com/username/projectname.svg?branch=master)](https://travis-ci.com/username/projectname)
 <!-- Italics -->
 *This text* is italic
 

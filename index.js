@@ -1,5 +1,5 @@
 var inquirer = require("inquirer");
-
+var axios = require("axios");
 const generateMarkdown = require("./generateMarkdown.js");
 const fs = require("fs");
 const util = require("util");
@@ -45,10 +45,21 @@ function init() {
         .prompt(questions)
         .then(function (response) {
 
-            //console.log(response);
-            let output = generateMarkdown(response);
-            console.log(output);
-            writeToFile('README.md', output);
+            axios
+                .get(`https://api.github.com/users/${response.username}`)
+                .then(function (res) {
+                    console.log(res.data);
+                    //console.log(response);
+                    response['avatar_url'] = res.data['avatar_url'];
+                    response['html_url'] = res.data['html_url'];
+                    let output = generateMarkdown(response);
+                    console.log(output);
+                    writeToFile('README.md', output);
+
+                });
+
+
+
         });
 }
 init();
